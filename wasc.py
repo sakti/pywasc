@@ -3,6 +3,7 @@ import os
 import sys
 import argparse
 import time
+import cgi
 from urlparse import urlparse
 
 
@@ -68,6 +69,7 @@ if __name__ == "__main__":
         print "Execute scan script %s" % script
         report_file.write("<h3>Execute scan script %s</h3>" % script)
         result = scripts[script].run(url)
+        result = cgi.escape(result)
         report_file.write('<pre>%s</pre>' % result)
     end_time = time.time()
     print "Duration: %s" % (end_time - start_time)

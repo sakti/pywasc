@@ -1,9 +1,9 @@
 """testing for robots.txt"""
-import time
+import requests
 
 
-def run(*args, **kwargs):
-    result = str(args)
-    time.sleep(3)
-    result += str(kwargs)
-    return result
+def run(url):
+    robots_url = '%s://%s/robots.txt' % (url.scheme, url.netloc)
+    result = requests.get(robots_url)
+
+    return '%s\n%s' % (result.status_code, result.content)
