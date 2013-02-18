@@ -1,10 +1,9 @@
-"""testing for robots.txt"""
+"""Check if http trace enabled in web server"""
 import requests
 
 
 __id__ = 3
 __author__ = 'Sakti Dwi Cahyono'
-__desc__ = 'Check if http trace enabled in web server'
 
 
 def run(url):

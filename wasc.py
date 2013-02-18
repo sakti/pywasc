@@ -43,7 +43,6 @@ def get_list_script():
             try:
                 getattr(tmpmodule, 'run')
                 getattr(tmpmodule, '__id__')
-                getattr(tmpmodule, '__desc__')
                 list_script.append(tmpmodule)
             except:
                 continue
@@ -92,7 +91,7 @@ if __name__ == "__main__":
         print "Execute scan script %s" % script_name
         report_file.write('<hr>')
         report_file.write("<h3>Execute scan script %s</h3>" % script_name)
-        report_file.write("<p>%s</p>" % script.__desc__)
+        report_file.write("<p>%s</p>" % script.__doc__)
         start_script = datetime.now()
         result = script.run(url)
         end_script = datetime.now()

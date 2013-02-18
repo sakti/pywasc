@@ -1,10 +1,9 @@
-"""testing for robots.txt"""
+"""Look for open port on target host"""
 from sh import nmap
 
 
 __id__ = 1
 __author__ = 'Sakti Dwi Cahyono'
-__desc__ = 'Look for open port on target host'
 
 
 def run(url):

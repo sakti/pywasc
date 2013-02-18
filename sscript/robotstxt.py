@@ -1,10 +1,9 @@
-"""testing for robots.txt"""
+"""Check if robots.txt contain secret data"""
 import requests
 
 
 __id__ = 2
 __author__ = 'Sakti Dwi Cahyono'
-__desc__ = 'Check if robots.txt contain secret data'
 
 
 def run(url):
