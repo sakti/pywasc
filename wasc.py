@@ -106,7 +106,7 @@ if __name__ == "__main__":
     print "Duration: %s" % (end_time - start_time)
 
     report_file.write("<hr>")
-    report_file.write("Duration: %s" % (end_time - start_time))
+    report_file.write("Total Duration: %s" % (end_time - start_time))
     report_file.write("</body></html>")
 
     report_file.close()
