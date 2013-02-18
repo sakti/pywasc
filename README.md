@@ -15,7 +15,7 @@ Requirements
 Usage
 -----
 
-    usage: pywasc [-h] -u URL [-o OUTPUT] [-v]
+    usage: wasc [-h] -u URL [-o OUTPUT] [-v]
 
     Web Application Security Scanner
 
