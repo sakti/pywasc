@@ -48,7 +48,7 @@ def get_list_script():
             except:
                 continue
     # ordering based on script id
-    list_script.sort(key=lambda x: x.__id__, reverse=True)
+    list_script.sort(key=lambda x: x.__id__)
     return list_script
 
 
