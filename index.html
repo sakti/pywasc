@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Pywasc by sakti</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/sakti/pywasc">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/sakti/pywasc/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/sakti/pywasc/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Pywasc</h1>
+          <p>web application security scanner</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/sakti">sakti</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>pywasc</h1>
+
+<p>Web application security scanner.</p>
+
+<h2>Requirements</h2>
+
+<p>Python modules:</p>
+
+<ul>
+<li>requests</li>
+<li>sh</li>
+</ul><h2>Usage</h2>
+
+<pre><code>usage: wasc.py [-h] [-s SSCRIPT] -u URL [-o OUTPUT] [-v]
+
+Web Application Security Scanner
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s SSCRIPT, --sscript SSCRIPT
+                        run specific scan script
+  -u URL, --url URL     target url
+  -o OUTPUT, --output OUTPUT
+                        output report (html)
+  -v, --version         show program's version number and exit
+</code></pre>
+
+<p>Example: </p>
+
+<pre><code>$python wasc.py -u http://localhost -o report_localhost.html
+</code></pre>
+
+<p>run specific sscript</p>
+
+<pre><code>$./wasc.py -s sscript/httptrace.py -u http://localhost -o http_trace_local.html
+</code></pre>
+
+<h2>Documentation</h2>
+
+<p><a href="https://pywasc.readthedocs.org/en/latest/">Read the docs</a></p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
