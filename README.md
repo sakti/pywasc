@@ -1,12 +1,14 @@
 pywasc
 ======
 
-python web application security scanner
+Web application security scanner.
 
 
 
 Requirements
 ------------
+
+Python modules:
 
 - requests
 - sh
@@ -15,12 +17,14 @@ Requirements
 Usage
 -----
 
-    usage: wasc [-h] -u URL [-o OUTPUT] [-v]
+    usage: wasc.py [-h] [-s SSCRIPT] -u URL [-o OUTPUT] [-v]
 
     Web Application Security Scanner
 
     optional arguments:
       -h, --help            show this help message and exit
+      -s SSCRIPT, --sscript SSCRIPT
+                            run specific scan script
       -u URL, --url URL     target url
       -o OUTPUT, --output OUTPUT
                             output report (html)
@@ -29,6 +33,11 @@ Usage
 Example: 
 
     $python wasc.py -u http://localhost -o report_localhost.html
+
+run specific sscript
+
+    $./wasc.py -s sscript/httptrace.py -u http://localhost -o
+http_trace_local.html
 
 
 Documentation
