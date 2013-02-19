@@ -2,20 +2,23 @@
 import os
 import sys
 import argparse
-import time
 import cgi
 from urlparse import urlparse
 from datetime import datetime
 
 
-__VERSION__ = "0.1"
+__version__ = "0.1"
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 SCRIPT_DIR = os.path.join(ROOT_DIR, 'sscript')
 
 parser = argparse.ArgumentParser(
-            prog="wasc",
+            prog="wasc.py",
             description="Web Application Security Scanner"
          )
+parser.add_argument("-s", "--sscript",
+            action="store",
+            help="run specific scan script",
+            required=False)
 parser.add_argument("-u", "--url",
             action="store",
             help="target url",
@@ -26,7 +29,7 @@ parser.add_argument("-o", "--output",
             default="report.html")
 parser.add_argument("-v", "--version",
             action="version",
-            version=__VERSION__)
+            version=__version__)
 
 
 def get_list_script():
@@ -82,15 +85,22 @@ if __name__ == "__main__":
     <h1>pyWasc Report on %s</h1>
     """ % args.url)
 
-    scripts = get_list_script()
+    if args.sscript:
+        sscript = args.sscript.replace('/', '.')
+        if sscript.endswith('.py'):
+            sscript = sscript[:-3]
+        smodule = __import__(sscript)
+        scripts = [getattr(smodule, sscript.split('.')[1])]
+    else:
+        scripts = get_list_script()
 
-    start_time = time.time()
+    start_time = datetime.now()
 
     for script in scripts:
         script_name = script.__name__.split('.')[1]
         print "Execute scan script %s" % script_name
         report_file.write('<hr>')
-        report_file.write("<h3>Execute scan script %s</h3>" % script_name)
+        report_file.write("<h3>Scan script %s</h3>" % script_name)
         report_file.write("<p>%s</p>" % script.__doc__)
         start_script = datetime.now()
         result = script.run(url)
@@ -100,7 +110,7 @@ if __name__ == "__main__":
         report_file.write('<p>%s - %s</p>' % (start_script, end_script))
         report_file.write('<p>Duration: %s</p>' % (end_script - start_script))
 
-    end_time = time.time()
+    end_time = datetime.now()
 
     print "Duration: %s" % (end_time - start_time)
 
