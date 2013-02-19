@@ -7,6 +7,6 @@ __author__ = 'Sakti Dwi Cahyono'
 
 
 def run(url):
-    result = nmap(url.netloc)
+    result = nmap(url.hostname)
 
     return '%s' % result.stdout
