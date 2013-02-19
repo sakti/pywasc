@@ -36,8 +36,7 @@ Example:
 
 run specific sscript
 
-    $./wasc.py -s sscript/httptrace.py -u http://localhost -o
-http_trace_local.html
+    $./wasc.py -s sscript/httptrace.py -u http://localhost -o http_trace_local.html
 
 
 Documentation
